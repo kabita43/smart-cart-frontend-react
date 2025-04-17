@@ -109,22 +109,22 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Newsletter - Fixed positioning issues */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Newsletter</h3>
             <p className="text-muted-foreground text-sm">
               Subscribe to our newsletter to get updates on our latest offers!
             </p>
-            <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
-              <div className="flex">
+            <form onSubmit={handleSubscribe} className="space-y-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Input
                   type="email"
                   placeholder="Your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="rounded-r-none"
+                  className="min-w-0 flex-1"
                 />
-                <Button type="submit" className="rounded-l-none">
+                <Button type="submit" className="whitespace-nowrap">
                   <MailIcon size={16} className="mr-2" />
                   Subscribe
                 </Button>
